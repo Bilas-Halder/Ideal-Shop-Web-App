@@ -1,10 +1,36 @@
+:root {
+  --primary: #286090;
+}
 body {
   overflow-x: hidden;
   font-family: "Montserrat", sans-serif;
 }
+
+/* custom buttons */
+.custom-btn{
+  padding: 0.4rem 1rem;
+  border-radius: 5px;
+  border: 3px solid var(--primary);
+  transition: all 0.3s ease-in;
+}
+.custom-btn-primary{
+  color: white;
+  background-color: var(--primary);
+}
+.custom-btn-primary:hover{
+  color: black;
+  background-color: white;
+}
+.custom-btn-secondary{
+    background-color: white;
+}
+.custom-btn-secondary:hover{
+  color: white;
+  background-color: var(--primary);
+}
+
 .search-field {
   border: none;
-  border-radius: 50px;
   padding: 5px;
   outline: none;
 }
@@ -12,36 +38,44 @@ body {
   outline: none;
   border: none;
 }
+#input-field{
+  width: 14rem;
+  margin-right: 5px;
+}
 .search-box {
   border: 1px solid rgb(3, 118, 211);
-  width: 281px;
+  width: 20rem;
   border-radius: 5px;
-  margin: auto;
+  margin: 0 auto;
   margin-top: 50px;
   border-right: none;
 }
-.search-button {
-  padding: 10px 50px;
-  border-radius: 25px;
-  margin-left: 25px;
-}
+
 #all-products {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
   /* border: 1px solid black; */
   text-align: center;
   width: 100%;
   margin: auto;
-  align-items: center;
+  margin-top: 25px;
+  margin-left: 15px;
   justify-content: center;
 }
 .single-product {
-  padding: 10px;
-  transition: 0.6s;
+  height: 100%;
+  padding: 16px 10px;
+  box-shadow: 0px 0 5px #80808080;
+  border-radius: 10px;
+  transition: 0.3s;
+
 }
 .single-product:hover {
   box-shadow: 4px 4px 7px gray;
   border-radius: 10px;
+  margin-top: -10px;
   border: 1px solid cyan;
 }
 .product-image {
@@ -50,20 +84,40 @@ body {
 }
 .cart {
   width: 350px;
-  /* border: 1px solid green; */
-  padding: 10px;
+  padding: 16px 10px;
   box-shadow: 10px 10px 20px gray;
   border-radius: 5px;
-  margin-right: 30px;
+  margin: 25px 30px 0 0;
   position: fixed;
 }
 .cart-main {
   padding-right: 30px;
 }
+.buy-now{
+  background-color: #059d9d;
+  border-color: #059d9d;
+}
+
+/* Star Setting */
+.fas, .far{
+  color: #faca50;
+}
+.rateCount{
+  display: inline;
+  font-weight: 600;
+}
+.rateCount i{
+  color: #059d9d;
+}
+
+
+
+/* Media query */
 @media only screen and (max-width: 768px) {
   #all-products {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
+    margin-left: 7px;
   }
   .cart {
     width: 300px;
@@ -82,5 +136,9 @@ body {
   #all-products {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
+    margin-left: 7px;
+  }
+  #input-field{
+    margin-right: 4px;
   }
 }
