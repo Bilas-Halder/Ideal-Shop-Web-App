@@ -44,7 +44,7 @@ const getStars = rating => {
     i++;
   }
   innerHtml += ` (${rating.rate})
-  <h5 class="rateCount"><i class="fas fa-user-check"></i> ${rating.count}</h5>`;
+  <p class="rateCount h5"><i class="fas fa-user-check"></i> ${rating.count} <span class="font-weight-normal h6"> Reviews </span> </p>`;
   p += innerHtml + `</p>`;
   return p;
 };
@@ -57,18 +57,24 @@ const showProducts = (products) => {
 
     const div = document.createElement("div");
     div.classList.add("product");
-    div.innerHTML = `<div class="single-product">
+    div.innerHTML = `<div class="single-product d-flex flex-column justify-content-between">
       <div>
-    <img class="product-image" src=${image}></img>
+        <img class="product-image" src=${image}></img>
       </div>
-      <h3>${product.title}</h3>
+
+      <div>
+      <h4 class="mt-3">${product.title}</h4>
       <p>Category: ${product.category}</p>
       ${getStars(product.rating)}
-      
-      <h3 style="color:#f57224">Price: $ ${product.price}</h3>
+      </div>
+
+      <div>
+      <h3 class="mb-3" style="color:#f57224">Price: $ ${product.price}</h3>
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="add-to-cart custom-btn custom-btn-primary">add to cart</button>
-    
-      <button onclick="showDetails(${product.id})" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-left:10px" id="details-btn" class="custom-btn custom-btn-secondary">Details</button></div>
+      <button onclick="showDetails(${product.id})" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-left:10px" id="details-btn" class="custom-btn custom-btn-secondary">Details</button>
+      </div>
+
+      </div>
       `;
     document.getElementById("all-products").appendChild(div);
   }
