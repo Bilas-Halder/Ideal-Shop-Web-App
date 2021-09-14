@@ -63,15 +63,20 @@ const showProducts = (products) => {
       </div>
 
       <div>
-      <h4 class="mt-3">${product.title}</h4>
-      <p>Category: ${product.category}</p>
-      ${getStars(product.rating)}
+        <h4 class="mt-3">${product.title}</h4>
+        <p>Category: ${product.category}</p>
+        ${getStars(product.rating)}
+        <h3 class="" style="color:#f57224">Price: $${product.price}</h3>
       </div>
 
-      <div>
-      <h3 class="mb-3" style="color:#f57224">Price: $ ${product.price}</h3>
-      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="add-to-cart custom-btn custom-btn-primary">add to cart</button>
-      <button onclick="showDetails(${product.id})" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-left:10px" id="details-btn" class="custom-btn custom-btn-secondary">Details</button>
+      <div class="position-relative">
+
+        <div class="wave wave-1"></div>
+        <div class="wave wave-2"></div>
+        <div class="wave wave-3"></div>
+    
+        <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="add-to-cart custom-btn custom-btn-primary mt-5  mb-3">add to cart</button>
+        <button onclick="showDetails(${product.id})" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"  style="margin-left:10px" id="details-btn" class="custom-btn custom-btn-secondary mt-5 mb-3">Details</button>
       </div>
 
       </div>
